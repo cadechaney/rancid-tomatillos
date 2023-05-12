@@ -1,10 +1,10 @@
 import React from 'react'
 import './Movie.css'
 
-const Movie = ({poster}) => {
+
+const Movie = ({id, poster, viewMovie}) => {
   return(
-    // <div className='poster' >{poster}</div>
-    <img className='poster' src={poster} ></img>
+    <img onClick={() => viewMovie(id)} className='poster' src={poster} ></img>
   )
 }
 
