@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from './Header/Header';
-import MovieData from '../Movies/MoviesData'
 import MoviesContainer from '../Movies/MoviesContainer'
 import './App.css';
 import '../Movies/MoviesContainer.css'
@@ -12,7 +11,9 @@ class App extends Component {
     super()
     this.state = {
       movies: [],
-      clicked: false
+      clicked: false,
+      singleMovieDetails: [],
+      err: ''
     }
   }
 
@@ -20,17 +21,15 @@ class App extends Component {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => response.json())
       .then(data => this.setState({ movies: data.movies, clicked: false }))
-      // .then(err => this.setState({ err: err.message }))
-  }
-
-  componentWillUnmount() {
-
+      .catch(() => {this.setState({err: 'Refresh Page'})})
   }
 
   viewMovie = (id) => {
     console.log('CHECKING', this.state.movies)
     const findMovie = this.state.movies.find(movie => movie.id === id)
-    this.setState({ movies: [findMovie], clicked: true})
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${findMovie.id}`)
+    .then(response => response.json())
+    .then(data => this.setState({clicked: true, singleMovieDetails: data.movie}))
   }
 
   returnHome() {
@@ -38,15 +37,16 @@ class App extends Component {
     window.location.reload(false)
   }
 
-
   render() {
     console.log('CHECK', this.state)
+    
     return(
       <div className='App'>
         <Header />
         <main className='moviesContainer'>
+          {this.state.err === 'Refresh Page' && <h1>Refresh Page</h1>}
           {(this.state.movies.length && !this.state.clicked) && <MoviesContainer viewMovie={this.viewMovie} movieDetails = { this.state.movies } />}
-          {this.state.clicked && <SingleMovie filteredMovie={this.state.movies} returnHome={this.returnHome} />}
+          {this.state.clicked && <SingleMovie filteredMovie={this.state.singleMovieDetails} returnHome={this.returnHome} />}
         </main>
       </div>
     )  
