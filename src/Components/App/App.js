@@ -23,11 +23,21 @@ class App extends Component {
       // .then(err => this.setState({ err: err.message }))
   }
 
+  componentWillUnmount() {
+
+  }
+
   viewMovie = (id) => {
     console.log('CHECKING', this.state.movies)
     const findMovie = this.state.movies.find(movie => movie.id === id)
     this.setState({ movies: [findMovie], clicked: true})
   }
+
+  returnHome() {
+    console.log('YOOO')
+    window.location.reload(false)
+  }
+
 
   render() {
     console.log('CHECK', this.state)
@@ -36,7 +46,7 @@ class App extends Component {
         <Header />
         <main className='moviesContainer'>
           {(this.state.movies.length && !this.state.clicked) && <MoviesContainer viewMovie={this.viewMovie} movieDetails = { this.state.movies } />}
-          {this.state.clicked && <SingleMovie filteredMovie={this.state.movies} />}
+          {this.state.clicked && <SingleMovie filteredMovie={this.state.movies} returnHome={this.returnHome} />}
         </main>
       </div>
     )  
