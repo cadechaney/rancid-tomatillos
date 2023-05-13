@@ -2,7 +2,6 @@ import React from 'react'
 
 
 const SingleMovie = (filteredMovie) => {
-  console.log(filteredMovie.filteredMovie[0].title)
   return (
     <div>
       <img className='single-poster' src={filteredMovie.filteredMovie[0].backdrop_path} ></img>

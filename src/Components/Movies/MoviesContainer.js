@@ -2,9 +2,8 @@ import React from 'react'
 import Movie from './Movie'
 
 const MoviesContainer = ( {viewMovie, movieDetails} ) => {
-    console.log(movieDetails)
-    console.log(movieDetails.movies)
-    const movies = movieDetails.movies.map(movie => {
+    console.log('FIRING', movieDetails)
+    const movies = movieDetails.map(movie => {
     return(
         <Movie 
             key={movie.id}
