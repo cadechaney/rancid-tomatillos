@@ -35,7 +35,7 @@ class App extends Component {
       <div className='App'>
         <Header />
         <main className='moviesContainer'>
-          {this.state.movies.length && <MoviesContainer viewMovie={this.viewMovie} movieDetails = { this.state.movies } />}
+          {(this.state.movies.length && !this.state.clicked) && <MoviesContainer viewMovie={this.viewMovie} movieDetails = { this.state.movies } />}
           {this.state.clicked && <SingleMovie filteredMovie={this.state.movies} />}
         </main>
       </div>
