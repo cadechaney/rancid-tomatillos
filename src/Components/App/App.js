@@ -11,24 +11,42 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: MovieData,
+      movies: [],
       clicked: false
     }
   }
 
+  componentDidMount() {
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => response.json())
+      .then(data => this.setState({ movies: data.movies, clicked: false }))
+      // .then(err => this.setState({ err: err.message }))
+  }
+
+  componentWillUnmount() {
+
+  }
+
   viewMovie = (id) => {
-    const findMovie = this.state.movies.movies.find(movie => movie.id === id)
-    console.log(findMovie)
+    console.log('CHECKING', this.state.movies)
+    const findMovie = this.state.movies.find(movie => movie.id === id)
     this.setState({ movies: [findMovie], clicked: true})
   }
 
+  returnHome() {
+    console.log('YOOO')
+    window.location.reload(false)
+  }
+
+
   render() {
+    console.log('CHECK', this.state)
     return(
       <div className='App'>
         <Header />
         <main className='moviesContainer'>
-          {!this.state.clicked && <MoviesContainer viewMovie={this.viewMovie} movieDetails = { this.state.movies } />}
-          {this.state.clicked && <SingleMovie filteredMovie={this.state.movies} />}
+          {(this.state.movies.length && !this.state.clicked) && <MoviesContainer viewMovie={this.viewMovie} movieDetails = { this.state.movies } />}
+          {this.state.clicked && <SingleMovie filteredMovie={this.state.movies} returnHome={this.returnHome} />}
         </main>
       </div>
     )  
