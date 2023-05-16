@@ -1,10 +1,4 @@
-
-html {
-  height: 100vh;
-  /* overflow: hidden; */
-}
-
-
 .moviesContainer {
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
 }

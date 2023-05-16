@@ -1,8 +1,12 @@
 import React from 'react'
+import './Header.css'
 
 const Header = () => {
     return (
-        <h1>Rancid Tomatillos</h1>
+        <header>
+            <h1 className='app-title'>Rancid Tomatillos</h1>
+        </header>
+            
     )
 }
 

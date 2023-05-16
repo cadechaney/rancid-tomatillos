@@ -1,18 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import './singleMovie.css'
 
 const SingleMovie = ({filteredMovie, returnHome}) =>  {
   console.log('filtered', filteredMovie)
     return (
       <div className='single-movie' >
-        <img className='single-poster' src={filteredMovie.backdrop_path} ></img>
+        <img className='single-poster' src={filteredMovie.backdrop_path}></img>
         <div className='text-details'>
           <p>{filteredMovie.title}</p>
-          <p>{filteredMovie.average_rating}</p>
-          <p>{filteredMovie.budget}</p>
+          <div className='movie-specs'>
+            <p>Rating: {filteredMovie.average_rating} {' '}</p>
+            <p>Runtime: {filteredMovie.runtime} min{' '}</p>
+            <p>Release: {filteredMovie.release_date}{' '}</p>
+          </div>
           <p>{filteredMovie.overview}</p>
-          <p>{filteredMovie.runtime}</p>
-          <p>{filteredMovie.release_date}</p>
+          
+          
           <button onClick={() => returnHome()} >Return</button>
         </div>
       </div>
