@@ -45,7 +45,7 @@ class App extends Component {
         <Header />
         <main className='moviesContainer'>
           {this.state.err === 'Refresh Page' && <h1>Refresh Page</h1>}
-          {(this.state.movies.length && !this.state.clicked) && <MoviesContainer viewMovie={this.viewMovie} movieDetails = { this.state.movies } />}
+          {(this.state.movies.length && !this.state.clicked) && <MoviesContainer className='movies-container' viewMovie={this.viewMovie} movieDetails = { this.state.movies } />}
           {this.state.clicked && <SingleMovie filteredMovie={this.state.singleMovieDetails} returnHome={this.returnHome} />}
         </main>
       </div>
