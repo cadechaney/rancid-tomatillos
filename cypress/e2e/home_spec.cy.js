@@ -16,5 +16,12 @@ describe('rancid tomatillos homepage', () => {
     
   })
 
+  it('should display an error message if data is unavailable', () => {
+    cy.intercept({method:'GET', url:'https://rancid-tomatillos.herokuapp.com/api/v2/movies'},{statusCode: 500}, movieData)
+    .visit('http://localhost:3000/')
+    .get('h1').contains('Refresh Page')
+  });
+
+  
 
 })
