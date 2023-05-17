@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Header from './Header/Header';
+import Header from '../Header/Header';
 import MoviesContainer from '../Movies/MoviesContainer'
 import './App.css';
 import '../Movies/MoviesContainer.css'
 import SingleMovie from '../Movies/singleMovie'
-
+import { Switch, Route} from 'react-router-dom'
 
 class App extends Component {
   constructor() {
@@ -32,26 +32,19 @@ class App extends Component {
     .then(data => this.setState({clicked: true, singleMovieDetails: data.movie}))
   }
 
-  returnHome() {
-    console.log('YOOO')
-    window.location.reload(false)
-  }
-
   render() {
-    console.log('CHECK', this.state)
-    
     return(
-      <div className='App'>
+      <>
         <Header />
-        <main className='moviesContainer'>
-          {this.state.err === 'Refresh Page' && <h1>Refresh Page</h1>}
-          {(this.state.movies.length && !this.state.clicked) && <MoviesContainer className='movies-container' viewMovie={this.viewMovie} movieDetails = { this.state.movies } />}
-          {this.state.clicked && <SingleMovie filteredMovie={this.state.singleMovieDetails} returnHome={this.returnHome} />}
+        <main>
+          <Switch>
+            <Route path='/:id' render={({ match }) => <SingleMovie filteredMovie={this.state.singleMovieDetails} returnHome={this.returnHome} key ={match.params.id} id={match.params.id} />} />
+            <Route path='/' render={() => <MoviesContainer className='movies-container' viewMovie={this.viewMovie} movieDetails = { this.state.movies } />} />
+          </Switch>
         </main>
-      </div>
-    )  
+      </>
+    )
   }
 }
-
 
 export default App;

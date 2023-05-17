@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import './singleMovie.css'
+import { Link } from 'react-router-dom'
 
 const SingleMovie = ({filteredMovie, returnHome}) =>  {
   console.log('filtered', filteredMovie)
@@ -15,9 +16,9 @@ const SingleMovie = ({filteredMovie, returnHome}) =>  {
             <p>Release: {filteredMovie.release_date}{' '}</p>
           </div>
           <p>{filteredMovie.overview}</p>
-          
-          
-          <button onClick={() => returnHome()} >Return</button>
+          <Link to={'/'}>
+            <button>Return</button>
+          </Link>
         </div>
       </div>
     )
