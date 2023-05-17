@@ -12,8 +12,7 @@ describe('rancid tomatillos homepage', () => {
   })
 
   it('should render correct elements', () => {
-    cy.get('main').get('.moviesContainer').get('.poster').should('have.length', 40)
-    
+    cy.get('.poster').should('have.length', 40)
   })
 
   it('should display an error message if data is unavailable', () => {
@@ -21,6 +20,10 @@ describe('rancid tomatillos homepage', () => {
     .visit('http://localhost:3000/')
     .get('h1').contains('Refresh Page')
   });
+
+  // it('should view single movie component on a click', () => {
+  //   cy.get('.poster').first().click().visit('http://localhost:3000/694919')
+  // })
 
   
 
