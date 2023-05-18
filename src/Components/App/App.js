@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { fetchMovie, fetchAllMovies } from '../data/apiCalls.js'
 import Header from '../Header/Header';
 import MoviesContainer from '../Movies/MoviesContainer'
 import './App.css';
@@ -18,18 +19,13 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => response.json())
-      .then(data => this.setState({ movies: data.movies, clicked: false }))
-      .catch(() => {this.setState({err: 'Refresh Page'})})
+    fetchAllMovies()
   }
 
   viewMovie = (id) => {
     console.log('CHECKING', this.state.movies)
     const findMovie = this.state.movies.find(movie => movie.id === id)
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${findMovie.id}`)
-    .then(response => response.json())
-    .then(data => this.setState({clicked: true, singleMovieDetails: data.movie}))
+    fetchMovie(findMovie.id)
   }
 
   render() {
