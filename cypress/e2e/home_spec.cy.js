@@ -21,10 +21,9 @@ describe('rancid tomatillos homepage', () => {
     .get('h1').contains('Refresh Page')
   });
 
-  // it('should view single movie component on a click', () => {
-  //   cy.get('.poster').first().click().visit('http://localhost:3000/694919')
-  // })
+  it('should view single movie component on a click', () => {
+    cy.get('.poster').first().click().visit('http://localhost:3000/694919')
+  })
 
   
-
 })

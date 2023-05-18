@@ -6,9 +6,9 @@ const MoviesContainer = ( {viewMovie, movieDetails} ) => {
   console.log('FIRING', movieDetails)
   const movies = movieDetails.map(movie => {
   return( 
-    <Link to={`/${movie.id}`} key={movie.id}>
-      <Movie id={movie.id} poster={movie.poster_path}viewMovie={viewMovie}/>
-    </Link>       
+   
+      <Movie key={movie.id} id={movie.id} poster={movie.poster_path}viewMovie={viewMovie}/>
+   
   )})
   return movies
 }

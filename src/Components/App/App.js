@@ -12,7 +12,7 @@ class App extends Component {
     this.state = {
       movies: [],
       clicked: false,
-      singleMovieDetails: [],
+      singleMovieDetails: {},
       err: ''
     }
   }
@@ -33,6 +33,9 @@ class App extends Component {
   }
 
   render() {
+    if(this.state.err === 'Refresh Page') {
+      return (<h1>Refresh Page</h1>)
+    }
     return(
       <>
         <Header />

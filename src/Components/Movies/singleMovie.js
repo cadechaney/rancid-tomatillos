@@ -5,17 +5,18 @@ import { Link } from 'react-router-dom'
 
 const SingleMovie = ({filteredMovie, returnHome}) =>  {
   console.log('filtered', filteredMovie)
+  console.log('filtered', filteredMovie?.backdrop_path)
     return (
       <div className='single-movie' >
         <img className='single-poster' src={filteredMovie.backdrop_path}></img>
         <div className='text-details'>
-          <p>{filteredMovie.title}</p>
+          <p className='title'>{filteredMovie.title}</p>
           <div className='movie-specs'>
-            <p>Rating: {filteredMovie.average_rating} {' '}</p>
-            <p>Runtime: {filteredMovie.runtime} min{' '}</p>
-            <p>Release: {filteredMovie.release_date}{' '}</p>
+            <p className='rating'>Rating: {filteredMovie.average_rating} {' '}</p>
+            <p className='runtime'>Runtime: {filteredMovie.runtime} min{' '}</p>
+            <p className='release'>Release: {filteredMovie.release_date}{' '}</p>
           </div>
-          <p>{filteredMovie.overview}</p>
+          <p className='overview'>{filteredMovie.overview}</p>
           <Link to={'/'}>
             <button>Return</button>
           </Link>
