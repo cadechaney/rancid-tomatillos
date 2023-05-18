@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchMovie, fetchAllMovies } from '../data/apiCalls.js'
+import { fetchMovie, fetchAllMovies } from '../data/apiCalls'
 import Header from '../Header/Header';
 import MoviesContainer from '../Movies/MoviesContainer'
 import './App.css';
@@ -20,12 +20,16 @@ class App extends Component {
 
   componentDidMount() {
     fetchAllMovies()
+      .then(data => this.setState({ movies: data.movies, clicked: false }))
+      .catch(() => {this.setState({err: 'Refresh Page'})})
   }
 
   viewMovie = (id) => {
     console.log('CHECKING', this.state.movies)
     const findMovie = this.state.movies.find(movie => movie.id === id)
     fetchMovie(findMovie.id)
+      .then(data => this.setState({ singleMovieDetails: data.movie, clicked: false }))
+      .catch(() => {this.setState({err: 'Refresh Page'})})   
   }
 
   render() {
