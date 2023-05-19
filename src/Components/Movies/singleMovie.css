@@ -19,9 +19,26 @@ img {
   right: 0%;
   width: 25%;
   background-color: black;
-  height: 100vh;  
+  height: 100.35vh;  
 }
 
 .movie-specs {
   display: flex;
+  flex-direction: column;
+}
+
+.overview {
+  width: 95%;
+}
+
+button {
+  margin-top: 60%;
+  border-radius: 6%;
+}
+
+.rating:hover,
+.runtime:hover,
+.release:hover,
+button:hover {
+  transform: scale(1.2)
 }
