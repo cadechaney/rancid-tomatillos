@@ -1,6 +1,14 @@
 .poster {
   /* border: solid 2px red; */
-  height: 30%;
-  width: 30%;
-  margin: 1%;
+  height: 100%;
+  width: 100%;
+  margin: 0%;
 }
+
+.link {
+  /* border: solid 2px red; */
+  height: 40vh; 
+  width: 30vw;
+  margin-top: 4%;
+}
+
