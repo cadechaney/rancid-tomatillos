@@ -8,7 +8,7 @@ const SingleMovie = ({filteredMovie}) =>  {
       <div className='single-movie' >
         <img className='single-poster' src={filteredMovie.backdrop_path}></img>
         <div className='text-details'>
-          <p className='title'>{filteredMovie.title}</p>
+          <h2 className='title'>{filteredMovie.title}</h2>
           <div className='movie-specs'>
             <p className='rating'>Rating: {filteredMovie.average_rating} {' '}</p>
             <p className='runtime'>Runtime: {filteredMovie.runtime} min{' '}</p>
