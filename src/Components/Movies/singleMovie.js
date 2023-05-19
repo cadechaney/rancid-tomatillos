@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import './singleMovie.css'
 import { Link } from 'react-router-dom'
 
-const SingleMovie = ({filteredMovie, returnHome}) =>  {
-  console.log('filtered', filteredMovie)
-  console.log('filtered', filteredMovie?.backdrop_path)
+const SingleMovie = ({filteredMovie}) =>  {
     return (
       <div className='single-movie' >
         <img className='single-poster' src={filteredMovie.backdrop_path}></img>
@@ -26,8 +24,14 @@ const SingleMovie = ({filteredMovie, returnHome}) =>  {
   }
 
   SingleMovie.propTypes = {
-    filteredMovie: PropTypes.object.isRequired
-    
+    filteredMovie: PropTypes.shape({
+      backdrop_path: PropTypes.string,
+      title: PropTypes.string,
+      average_rating: PropTypes.number,
+      runtime: PropTypes.number,
+      release_date: PropTypes.string,
+      overview: PropTypes.string
+    }).isRequired 
   }
   
   export default SingleMovie;

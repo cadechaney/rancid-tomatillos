@@ -25,7 +25,6 @@ class App extends Component {
   }
 
   viewMovie = (id) => {
-    console.log('CHECKING', this.state.movies)
     const findMovie = this.state.movies.find(movie => movie.id === id)
     fetchMovie(findMovie.id)
       .then(data => this.setState({ singleMovieDetails: data.movie, clicked: false }))
@@ -41,7 +40,7 @@ class App extends Component {
         <Header />
         <main>
           <Switch>
-            <Route path='/:id' render={({ match }) => <SingleMovie filteredMovie={this.state.singleMovieDetails} returnHome={this.returnHome} key ={match.params.id} id={match.params.id} />} />
+            <Route path='/:id' render={({ match }) => <SingleMovie filteredMovie={this.state.singleMovieDetails} key ={match.params.id} id={match.params.id} />} />
             <Route path='/' render={() => <MoviesContainer className='movies-container' viewMovie={this.viewMovie} movieDetails = { this.state.movies } />} />
           </Switch>
         </main>
