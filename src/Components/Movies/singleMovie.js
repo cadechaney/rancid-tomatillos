@@ -11,9 +11,9 @@ const SingleMovie = ({filteredMovie}) =>  {
           <h2 className='title'>{filteredMovie.title}</h2>
           <h3 className='overview'>{filteredMovie.overview}</h3>
           <div className='movie-specs'>
-            <h3 className='rating'>Rating: {filteredMovie.average_rating} {' '}</h3>
-            <h3 className='runtime'>Runtime: {filteredMovie.runtime} min{' '}</h3>
-            <h3 className='release'>Release: {filteredMovie.release_date}{' '}</h3>
+            <p className='rating'>Rating: {filteredMovie.average_rating} {' '}</p>
+            <p className='runtime'>{filteredMovie.runtime} min{' '}</p>
+            <p className='release'>{filteredMovie.release_date}{' '}</p>
           </div>
           <Link to={'/'}>
             <button>View More Movies</button>

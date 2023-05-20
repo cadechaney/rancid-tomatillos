@@ -11,5 +11,9 @@ main {
   flex-wrap: wrap;
   justify-content: space-around;
   background-color: #564d4d;
-  
+}
+
+.poster:hover,
+button:hover {
+  transform: scale(1.1)
 }

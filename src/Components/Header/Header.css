@@ -2,11 +2,13 @@ header {
     display: flex;
     justify-content: center;
     background-color: black;
+    height: 10vh
 }
 
 .app-title {
+    font-size: 5vh;
     display: flex;
     align-items: center;
-    height: 1.0em;
+  
     color: #db0000;
 }

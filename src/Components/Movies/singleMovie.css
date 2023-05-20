@@ -1,41 +1,45 @@
 img {
-  height: 100vh;
-  width: 80vw;
+  height: 90vh;
   display:flex;
   position: relative;
+  margin-left: -50px;
   top: 0;
   right: 0
-}
-
-.text-details {
-  margin-top: 5%;
+ }
+ 
+ .text-details {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: .8em;
+  padding-left: 10px;
+  font-size: 1.2em;
   color: aliceblue;
   position: absolute;
-  top: 0%;
-  right: 0%;
-  width: 25%;
-  background-color: black;
-  height: 100.35vh;  
-}
-
-.movie-specs {
+  top: 10vh;
+  right: 0;
+  width: 30%;
+  background-color: #564d4d;
+  height: 90vh;
+ }
+ 
+ p {
+  padding-right: 4vw;
+ }
+ 
+ .title {
+  font-size: 2em;
+  margin-top: 20%;
+  margin-bottom: 0;
+ }
+  
+ .movie-specs {
   display: flex;
-  flex-direction: column;
-}
-
-.overview {
-  width: 95%;
-}
-
-button {
-  margin-top: 60%;
-  border-radius: 6%;
-}
-
+ }
+ 
+ button:hover {
+  cursor: pointer;
+ }
+ 
 .rating:hover,
 .runtime:hover,
 .release:hover,
