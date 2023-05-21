@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# [rancid-tomatillos](https://github.com/mrlobatoman/rancid-tomatillos)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Abstract:
+This is an interactive web-based application that was developed to make the user's experience for looking at the latest movies, their summary, runtime, release date, and the average user rating.
 
-## Available Scripts
+### Installation Instructions:
 
-In the project directory, you can run:
+OR- [deploy-project](https://rancid-tomatillos-mc1goqky4-mrlobatoman.vercel.app/) 
 
-### `npm start`
+1. Open your terminal and navigate to where you would like to store the repository.
+3. Using the `SSH` key, paste `git clone git@github.com:mrlobatoman/rancid-tomatillos.git` into your terminal.
+4. `cd` into the repository on your local machine and run `npm install` or `npm i` to install project dependencies.
+5. Run `npm start` to launch the app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Preview of App:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![App Preview](./images/landingView.png)
 
-### `npm test`
+![App Preview](./images/singleMovieView.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Context:
 
-### `npm run build`
+This project was completed in the 14th week of the Turing front-end software engineering program. This is our first time creating a project utilizing React and Cypress. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Contributors:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Michael](https://github.com/mrlobatoman)
+- [Cade](https://github.com/cadechaney)
 
-### `npm run eject`
+### Learning Goals:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Use React with an understanding of how components should be utilized
+- Implement Route instead of using render logic
+- Understand and work with JSX
+- Implement UI testing using Cypress
+- Insure correct data is being passed into each component via PropTypes
+- Make network requests using the fetch API to retrieve data to a local server
+- Create a user interface that is easy to use, clearly displays information, and follows best practices for accessibility
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Technologies Used:
+- Fetch API
+- Git/GitHub/Trello
+- JavaScript
+- CSS
+- HTML
+- JSX
+- PropTypes
+- Cypress
